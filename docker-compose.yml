@@ -6,14 +6,14 @@ services:
       context: .
       dockerfile: ./docker/php/Dockerfile
     ports:
-      - 80:80
+      - 80:8000
     volumes:
       - ./src:/var/www/html
 
-  mysql:
+  db:
     build:
       context: .
-      dockerfile: ./docker/mysql/Dockerfile
+      dockerfile: ./docker/db/Dockerfile
     ports:
       - 3306:3306
     environment:
